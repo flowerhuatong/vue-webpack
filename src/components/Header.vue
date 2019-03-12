@@ -13,7 +13,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li>
-          <router-link to="login" class="nav-link">登录</router-link>
+          <router-link :to="{name:'Login'}" class="nav-link">登录</router-link>
         </li>
         <li>
           <router-link to="register" class="nav-link">注册</router-link>
@@ -36,7 +36,7 @@
           router: 'menu',
           name: '菜单'
         }, {
-          router: 'admin',
+          router: {name:'Admin'},
           name: '管理'
         }, {
           router: 'about',
