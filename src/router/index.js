@@ -9,6 +9,14 @@ import Admin from '@/components/Admin';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
 import About from '@/components/about/About';
+//二级路由
+import Contact from '@/components/about/Contact';
+import Deilvery from '@/components/about/Deilvery';
+import History from '@/components/about/History';
+import OrderingGuide from '@/components/about/OrderingGuide';
+//三级路由
+import Phone from '@/components/about/contact/Phone';
+import Personname from '@/components/about/contact/personname';
 
 Vue.use(Router);
 
@@ -42,8 +50,45 @@ export default new Router({
     {
       path: '/about',
       name: 'About',
-      component: About
-    },{
+      component: About,
+      redirect:'/about/contact',
+      children:[
+        {
+          path: '/about/contact',
+          name: 'Contact',
+          component: Contact,
+          redirect:'/about/contact/personname',
+          children:[
+            {
+              path: '/about/contact/phone',
+              name: 'Phone',
+              component: Phone
+            },
+            {
+              path: '/about/contact/personname',
+              name: 'Personname',
+              component: Personname
+            }
+          ]
+        },
+        {
+          path: '/about/deilvery',
+          name: 'Deilvery',
+          component: Deilvery,
+        },
+        {
+          path: '/about/history',
+          name: 'History',
+          component: History,
+        },
+        {
+          path: '/about/orderingGuide',
+          name: 'OrderingGuide',
+          component: OrderingGuide,
+        }
+      ]
+    },
+    {
       path: '*',  //除了以上已经定义好的路由（路由输入错误的时候）
       redirect:'/'//让它跳转的路由
     }

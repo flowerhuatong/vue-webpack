@@ -8,18 +8,6 @@
 </template>
 <script>
   export default {
-    props: {
-
-    },
-    data() {
-      return {
-
-      }
-    },
-    created() {
-
-    },
-
     methods: {
       goToMenu:function(){
         // this.$router.go(-1);//跳转到上一次浏览的页面
