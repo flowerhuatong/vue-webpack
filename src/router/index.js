@@ -35,7 +35,12 @@ let router =  new Router({
     {
       path: '/admin',
       name: 'Admin',
-      component: Admin
+      component: Admin,
+      //路由独享的守卫
+      // beforeEnter:(to,from,next)=>{
+      //   alert('非登录状态下，不能访问此页面!');
+      //   next(false);
+      // }
     },
     {
       path: '/login',
@@ -96,12 +101,18 @@ let router =  new Router({
   mode:"history"
 })
 //全局守卫
-router.beforeEach((to,from,next)=>{
-  if(to.path=='/login'||to.path=='/register'){
-    next();
-  }else{
-    alert('还没有登录，请先登录!');
-    next('/login');
-  }
-})
+// router.beforeEach((to,from,next)=>{
+//   //判断store.gettes.isLogin ===false
+//   if(to.path=='/login'||to.path=='/register'){
+//     next();
+//   }else{
+//     alert('还没有登录，请先登录!');
+//     next('/login');
+//   }
+// })
+
+//后置钩子
+// router.afterEach((to,from)=>{
+//   alert('aaa');
+// })
 export default router
