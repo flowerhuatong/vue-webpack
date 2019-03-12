@@ -3,7 +3,9 @@
     <div class="container">
       <app-header></app-header>
     </div>
-    <!-- <router-view/> -->
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
