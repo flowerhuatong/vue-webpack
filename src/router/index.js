@@ -43,6 +43,9 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },{
+      path: '*',  //除了以上已经定义好的路由（路由输入错误的时候）
+      redirect:'/'//让它跳转的路由
     }
   ],
   mode:"history"
