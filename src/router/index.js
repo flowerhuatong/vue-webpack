@@ -25,7 +25,12 @@ let router =  new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      components: {
+        default:Home,
+        'deilvery':Deilvery,
+        'history':History,
+        'orderingGuide':OrderingGuide,
+      }
     },
     {
       path: '/menu',
