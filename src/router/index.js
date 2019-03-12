@@ -20,7 +20,7 @@ import Personname from '@/components/about/contact/personname';
 
 Vue.use(Router);
 
-export default new Router({
+let router =  new Router({
   routes: [
     {
       path: '/',
@@ -94,4 +94,14 @@ export default new Router({
     }
   ],
   mode:"history"
-});
+})
+//全局守卫
+router.beforeEach((to,from,next)=>{
+  if(to.path=='/login'||to.path=='/register'){
+    next();
+  }else{
+    alert('还没有登录，请先登录!');
+    next('/login');
+  }
+})
+export default router
