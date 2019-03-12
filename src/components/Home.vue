@@ -1,9 +1,12 @@
 <template>
-  <div>
-    <h1>Home</h1>
-    <button @click="goToMenu" class="btn btn-success">
-      go
-    </button>
+  <div class="row">
+    <div id="home" class="col-sm-12 text-center">
+      <div class="backround">
+        <h1>欢迎大家品尝水果!</h1>
+        <h2>这里有你非常喜欢的水果！</h2>
+        <button @click="goToMenu" class="btn btn-success">goToMenu</button>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -19,5 +22,19 @@
   };
 </script>
 <style>
-
+#home{
+  background:url('../../src/assets/sg.jpg') no-repeat;
+  height: 85vh;
+  padding: 10%;
+}
+h1,h2{
+  margin: 6%;
+}
+.backround{
+  background: #eee;
+  opacity: 0.8;
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 20px 0;
+}
 </style>
