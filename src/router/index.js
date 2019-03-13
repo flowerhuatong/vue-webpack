@@ -104,24 +104,25 @@ let router =  new Router({
     }
   ],
   mode:"history",
-  scrollBehavior (to, from, savedPosition) {
-    // return 期望滚动到哪个的位置
-    // return{
-    //   x:0,
-    //   y:100
-    // }
-    // return{
-    //   selector:'.btn',
-    // }
-    // if(savedPosition){//浏览器前进后退的时候才会触发
-    //   return savedPosition
-    // }else{
-    //   return{
-    //     x:0,
-    //     y:0
-    //   }
-    // }
-  }
+  //滚动行为
+  // scrollBehavior (to, from, savedPosition) {
+  //   // return 期望滚动到哪个的位置
+  //   // return{
+  //   //   x:0,
+  //   //   y:100
+  //   // }
+  //   // return{
+  //   //   selector:'.btn',
+  //   // }
+  //   if(savedPosition){//浏览器前进后退的时候才会触发
+  //     return savedPosition
+  //   }else{
+  //     return{
+  //       x:0,
+  //       y:0
+  //     }
+  //   }
+  // }
 })
 //全局守卫
 // router.beforeEach((to,from,next)=>{

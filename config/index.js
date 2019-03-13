@@ -12,10 +12,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         '/blog': {
-            target: 'http://127.0.0.1:8080',
-            changeOrigin: true,
+            target: 'http://127.0.0.1:8080',  //接口域名
+            changeOrigin: true,               //是否跨域
             pathRewrite: {
-                '^/blog': ''
+                '^/blog': ''                  //需要rewrite重写的
             }
         }
     },

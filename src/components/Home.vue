@@ -11,6 +11,23 @@
 </template>
 <script>
   export default {
+    data(){
+      return{
+        dataList:[]
+      }
+    },
+    created() {
+      var vm = this;
+
+      vm.$axios({
+        method: 'post',
+        url: '/blog/articleQurey',
+        data: {}
+      }).then(function(res) {
+        vm.dataList = res.data.data;
+        console.log(res);
+      })
+    },
     methods: {
       goToMenu:function(){
         // this.$router.go(-1);//跳转到上一次浏览的页面
